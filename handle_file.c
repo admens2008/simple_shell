@@ -8,13 +8,13 @@ void handle_file(char *filename);
  */
 void reset_arg(char **arg)
 {
-int i = 0;
+	int i = 0;
 
-while (arg[i])
-{
-	arg[i] = NULL;
-	i++;
-}
+	while (arg[i])
+	{
+		arg[i] = NULL;
+		i++;
+	}
 }
 
 /**
@@ -51,6 +51,16 @@ void handle_file(char *filename)
 			{
 				line[lineLength] = '\n';
 				line[lineLength + 1] = '\0';
+				if (strchr(line, ';') != NULL)
+				{
+					tobi1.errnum++;
+					tobi1.colon = 1;
+					tokenize_semicolon(line);
+					tobi1.colon = 0;
+					strcpy(line, "\0");
+					arg_count = 0;
+					lineLength = 0;
+				}
 				token = strtok(line, " \n");
 				while (token != NULL)
 				{
@@ -62,7 +72,7 @@ void handle_file(char *filename)
 					args[arg_count] = token;
 					/*strcpy(args[arg_count], token);*/
 					token = strtok(NULL, " \n");
-						arg_count++;
+					arg_count++;
 				}
 				/* check if there is an empty space or newline*/
 				token = strtok(args[0], " \n");

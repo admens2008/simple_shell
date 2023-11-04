@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	char *token = NULL;
 	int i = 0;
 
-	isecho = isatty(STDIN_FILENO); 
+	isecho = isatty(STDIN_FILENO);
 	tobi1.errnum = 0;
 	tobi1.exitcode = 0;
 	tobi1.app_name = argv[0];
