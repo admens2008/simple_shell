@@ -73,7 +73,8 @@ void execute(char **args, char *ech)
 		{
 			exit_status = WEXITSTATUS(status);
 			if (exit_status == 1)
-				tobi1.exitcode = 127;
+				tobi1.exitcode = exit_status;
+				/*tobi1.exitcode = 127;*/
 			if (exit_status  != 0 && (!isatty(STDIN_FILENO)))
 			{
 				tobi1.exitcode = exit_status;
@@ -82,7 +83,8 @@ void execute(char **args, char *ech)
 		}
 
 		if (exit_status == 1)
-			tobi1.exitcode = 127;
+			tobi1.exitcode = exit_status;
+			/*tobi1.exitcode = 127;*/
 		else
 			tobi1.exitcode = exit_status;
 	}
