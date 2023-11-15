@@ -78,7 +78,9 @@ int main(int argc, char **argv)
 			{
 				if (arg[1] == NULL)
 				{
-					break;
+					free(tobi1.cmd);
+					tobi1.exitcode = 0;
+					exit(0);
 				}
 				else
 				{
