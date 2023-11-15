@@ -79,7 +79,6 @@ int main(int argc, char **argv)
 			{
 				if (arg[1] == NULL)
 				{
-					printf("i came here");
 					free(tobi1.cmd);
 					tobi1.exitcode = 0;
 					exit(0);
