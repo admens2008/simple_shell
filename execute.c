@@ -11,8 +11,8 @@ void execute(char **args, char *ech)
 	int pid;
 	int exit_status;
 
-	if (tobi1.colon != 1)
-		tobi1.errnum++;
+	/*if (tobi1.colon != 1)*/
+	tobi1.errnum++;
 	(void)ech;
 	pid  = fork();
 
@@ -75,7 +75,7 @@ void execute(char **args, char *ech)
 			if (exit_status == 1)
 				tobi1.exitcode = exit_status;
 				/*tobi1.exitcode = 127;*/
-			if (exit_status  != 0 && (!isatty(STDIN_FILENO)))
+			if (exit_status  != 0 && !isatty(STDIN_FILENO))
 			{
 				tobi1.exitcode = exit_status;
 				exit(exit_status);
