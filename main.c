@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			token = strtok(tobi1.cmd, " \n\t\r");
+			token = strtok(tobi1.cmd, " \"\'\n\t\r");
 			while (token)
 			{
 				if (token[0] == '#')
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 					break;
 				}
 				arg[i] = token;
-				token = strtok(NULL, " \n\t\r");
+				token = strtok(NULL, " \"\'\n\t\r");
 				i++;
 			}
 			arg[i] = NULL;
