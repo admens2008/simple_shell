@@ -56,7 +56,7 @@ void execute(char **args, char *ech)
 		_stdout(args[0], 2);
 		_stdout(": not found\n", 2);
 		tobi1.exitcode = 2;
-		free(tobi1.cmd);
+		/*free(tobi1.cmd);*/
 		exit(EXIT_FAILURE);
 	}
 	else if (pid < 0)
