@@ -1,14 +1,5 @@
 #include "hsh.h"
 int main(int argc, char **argv);
-void cleanup(void);
-/**
- * cleanup - ======
- */
-void cleanup(void)
-{
-if (tobi1.cmd != NULL)
-	free(tobi1.cmd);
-}
 /**
  * main - main function alsokno as the entry pointof the program
  * @argc: argument count
@@ -29,7 +20,6 @@ int main(int argc, char **argv)
 	tobi1.exitcode = 0;
 	tobi1.app_name = argv[0];
 	signal(SIGINT, sigint_handler);
-	atexit(cleanup);
 	if (argc >= 2)
 	{
 		handle_file(argv[1]);
