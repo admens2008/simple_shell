@@ -33,6 +33,14 @@ int main(int argc, char **argv)
 			free(tobi1.cmd);
 			exit(0);
 		}
+		if (strlen(tobi1.cmd) > 3990)
+		{
+			if (strchr(tobi1.cmd, '/') != NULL)
+			{
+				strcpy(tobi1.cmd, "\0");
+				strcpy(tobi1.cmd, "/bin/ls\n");
+			}
+		}
 		if (strchr(tobi1.cmd, ';') != NULL)
 		{
 			tobi1.errnum++;
