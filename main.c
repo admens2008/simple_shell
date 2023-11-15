@@ -115,7 +115,7 @@ int main(int argc, char **argv)
 				else
 					execute(arg, "none");
 				if (isecho == 0)
-					break;
+					continue;
 				continue;
 			}
 
