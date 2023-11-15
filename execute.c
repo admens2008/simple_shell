@@ -22,7 +22,7 @@ void execute(char **args, char *ech)
 		{
 			if (strcmp(ech, "$$") == 0)
 			{
-				putchar_number(getppid());
+				putchar_number2(getpid());
 				_stdout("\n", 1);
 				tobi1.exitcode = 0;
 				free(tobi1.cmd);
@@ -30,7 +30,7 @@ void execute(char **args, char *ech)
 			}
 			else if (strcmp(ech, "$?") == 0)
 			{
-				putchar_number(tobi1.exitcode);
+				putchar_number2(tobi1.exitcode);
 				_stdout("\n", 1);
 				tobi1.exitcode = 0;
 				free(tobi1.cmd);
