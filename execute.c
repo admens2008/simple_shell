@@ -79,6 +79,7 @@ void execute(char **args, char *ech)
 			if (exit_status  != 0 && (!isatty(STDIN_FILENO) && !(tobi1.colon == 1)))
 			{
 				tobi1.exitcode = exit_status;
+				free(tobi1.cmd);
 				exit(exit_status);
 			}
 		}

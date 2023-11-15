@@ -30,7 +30,8 @@ int main(int argc, char **argv)
 		byte = getline(&tobi1.cmd, &size, stdin);
 		if (byte == -1)
 		{
-			break;
+			free(tobi1.cmd);
+			exit(0);
 		}
 		if (strchr(tobi1.cmd, ';') != NULL)
 		{
@@ -78,6 +79,7 @@ int main(int argc, char **argv)
 			{
 				if (arg[1] == NULL)
 				{
+					printf("i came here");
 					free(tobi1.cmd);
 					tobi1.exitcode = 0;
 					exit(0);
