@@ -8,7 +8,7 @@ int main(int argc, char **argv);
  */
 int main(int argc, char **argv)
 {
-	char *arg[15000] = {NULL};
+	char *arg[25000] = {NULL};
 	int byte = 0;
 	size_t size;
 	int isecho = 1;
