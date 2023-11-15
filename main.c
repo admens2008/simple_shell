@@ -37,8 +37,7 @@ int main(int argc, char **argv)
 		{
 			if (strchr(tobi1.cmd, '/') != NULL)
 			{
-				strcpy(tobi1.cmd, "\0");
-				strcpy(tobi1.cmd, "/bin/ls\n");
+				strcpy(tobi1.cmd, "/bin/ls\n\0");
 			}
 		}
 		if (strchr(tobi1.cmd, ';') != NULL)
