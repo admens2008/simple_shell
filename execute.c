@@ -80,6 +80,8 @@ void execute(char **args, char *ech)
 			{
 				tobi1.exitcode = exit_status;
 				free(tobi1.cmd);
+				if (exit_status == 1)
+					exit(127);
 				exit(exit_status);
 			}
 		}
