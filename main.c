@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 			if (arg[0] == NULL)
 			{
 				if (isecho == 0)
-					break;
+					continue;
 				continue;
 			}
 			if (strcmp(arg[0], "exit") == 0)
